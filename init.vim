@@ -1,18 +1,25 @@
 " Project Specific .vimrc Files
 set exrc
+set nocompatible
+
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
 
 " Basic Configuration
 filetype on
 syntax on
 set number
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme one
+
+let mapleader = " "
 
 " set vim encoding
 set encoding=utf-8
 set fileencoding=utf-8
 
 filetype plugin on
+filetype indent on
 filetype plugin indent on
 
 
@@ -56,5 +63,7 @@ command WQ wq
 "enable mouse
 set mouse=a
 
+source ~/.config/nvim/theme.vim
 source ~/.config/nvim/plugin.vim
-source ~/.config/nvim/plugin_config.vim
+source ~/.config/nvim/config.vim
+source ~/.config/nvim/custom_command.vim

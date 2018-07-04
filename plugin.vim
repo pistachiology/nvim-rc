@@ -1,15 +1,45 @@
 call plug#begin()
 
+" Visual
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rakr/vim-one'
+
 Plug 'junegunn/vim-easy-align'
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+" Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+Plug 'terryma/vim-multiple-cursors'
+
+" Autocomplete
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+" Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'ludovicchabant/vim-gutentags'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+
+
+" Language
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+
+" Test
+Plug 'janko-m/vim-test'
+
+" Utilities
+Plug 'tomtom/tcomment_vim'
+Plug 'Chiel92/vim-autoformat'
+
+" Syntax Checker
+Plug 'vim-syntastic/syntastic'
+
 
 " Initialize plugin system
 call plug#end()
