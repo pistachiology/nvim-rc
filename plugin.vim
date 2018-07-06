@@ -1,4 +1,6 @@
 call plug#begin()
+" Thai keyboard
+Plug 'chakrit/vim-thai-keys'
 
 " Visual
 Plug 'vim-airline/vim-airline'
@@ -25,10 +27,15 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 
 
-" Language
+" Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'tpope/vim-rails'
+
+" Ruby
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/gem-ctags'
+Plug 'tpope/vim-bundler'
 
 " Test
 Plug 'janko-m/vim-test'
@@ -38,8 +45,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Chiel92/vim-autoformat'
 
 " Syntax Checker
-Plug 'vim-syntastic/syntastic'
-
+" Plug 'vim-syntastic/syntastic'
+" Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 
 " Initialize plugin system
 call plug#end()

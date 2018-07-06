@@ -1,6 +1,7 @@
 " Project Specific .vimrc Files
 set exrc
 set nocompatible
+set t_Co=256
 
 hi Comment gui=italic cterm=italic
 hi htmlArg gui=italic cterm=italic
@@ -27,17 +28,18 @@ filetype plugin indent on
 set autoindent
 
 " scroll speed
-set scroll=8
+set scroll=16
 
 " allow backspacing over autoindent, linebreaks and starting point
 set backspace=indent,eol,start
 
 " set tab stops
 set shiftwidth=4 tabstop=8 softtabstop=4 expandtab
+" COMMAND to use old-style tab
+command Tab setl shiftwidth=4 tabstop=4 softtabstop=0 noexpandtab indentexpr=
 
   
 " other stuff
-
 " searching: incremental, highlight, smart case
 set incsearch hlsearch smartcase
 
@@ -48,12 +50,12 @@ set guifont=Dank\ Mono:h14
 " show line number and command being entered
 set showcmd number
 
-" COMMAND to use old-style tab
-command Tab setl shiftwidth=4 tabstop=4 softtabstop=0 noexpandtab indentexpr=
 
 " COMMAND to setup autocommands
 command -nargs=* Auto au BufNewFile,BufRead <args>
 command -nargs=* AutoType au FileType <args>
+" resize if windows is resized
+autocmd VimResized * wincmd =
 
 " COMMAND to fix typing mistakes
 command Q q

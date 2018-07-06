@@ -7,16 +7,22 @@ set signcolumn=yes
 nnoremap <C-[> gT
 nnoremap <C-]> gt
 nnoremap tn :tabnew<CR>
+unmap <esc>
 " set omnifunc=syntaxcomplete#Complete
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
 " fzf plugin
 nnoremap <C-p> :Files<CR>
-nnoremap <leader>F :Ag 
+nnoremap <leader>s :Tags<space><C-R><C-W><space><CR>
+nnoremap <leader>f :Ag <CR>
+command! -bang -nargs=* Find call fzf#vim#grep('rg --files --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
 
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<CR>  
+
 let NERDTreeIgnore = ['node_modules', '\.pyc$']
 let g:NERDTreeMouseMode = 3     " Single Click
 
@@ -37,17 +43,20 @@ noremap <F3> :Autoformat<CR>
 
 " Custom Commands
 map <leader>e :call custom_command#run()<cr>
-map <leader>s :call custom_command#set()<cr>
+map <leader>d :call custom_command#set()<cr>
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_ruby_rubocop_exec = "/Users/pistachio/.rbenv/shims/rubocop"
+
 
 " Gutentags
 " let g:gutentags_cache_dir = util#localpath('tags')
@@ -57,3 +66,12 @@ let g:gutentags_ctags_exclude_wildignore = 0
 " Temporary fix due to https://github.com/ludovicchabant/vim-gutentags/issues/167
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 
+set termguicolors
+
+" Neomake
+" call neomake#configure#automake('w')
+" let g:neomake_open_list = 2
+" ALE
+let g:ale_sign_column_always = 1
+let g:ale_linters = {'ruby': ['rubocop']}
+let g:ale_linter_aliases = {'jsx': 'css'}
