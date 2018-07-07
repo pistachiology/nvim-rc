@@ -2,22 +2,18 @@
 " git gutter
 set signcolumn=yes
 
-
 " default vim mapping
 nnoremap <C-[> gT
 nnoremap <C-]> gt
 nnoremap tn :tabnew<CR>
 unmap <esc>
 " set omnifunc=syntaxcomplete#Complete
-" deoplete
-let g:deoplete#enable_at_startup = 1
 
 " fzf plugin
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>s :Tags<space><C-R><C-W><space><CR>
-nnoremap <leader>f :Ag <CR>
+nnoremap <leader>f :Ag<space><C-R><C-W><space><CR>
 command! -bang -nargs=* Find call fzf#vim#grep('rg --files --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
 
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
@@ -45,19 +41,6 @@ noremap <F3> :Autoformat<CR>
 map <leader>e :call custom_command#run()<cr>
 map <leader>d :call custom_command#set()<cr>
 
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_rubocop_exec = "/Users/pistachio/.rbenv/shims/rubocop"
-
-
 " Gutentags
 " let g:gutentags_cache_dir = util#localpath('tags')
 let g:gutentags_ctags_exclude = ['venv', 'build', 'static', 'node_modules']
@@ -68,10 +51,59 @@ au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 
 set termguicolors
 
-" Neomake
-" call neomake#configure#automake('w')
-" let g:neomake_open_list = 2
 " ALE
 let g:ale_sign_column_always = 1
 let g:ale_linters = {'ruby': ['rubocop']}
 let g:ale_linter_aliases = {'jsx': 'css'}
+
+" Language Server
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'ruby': ['solargraph', 'stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'css': ['vscode-css-languageserver-bin'],
+    \ }
+
+autocmd filetype php LanguageClientStart
+
+
+" Ternjs
+" Whether to include the types of the completions in the result data. Default: 0
+let g:deoplete#sources#ternjs#types = 1
+
+" Whether to include the distance (in scopes for variables, in prototypes for 
+" properties) between the completions and the origin position in the result 
+" data. Default: 0
+let g:deoplete#sources#ternjs#depths = 1
+
+" Whether to include documentation strings (if found) in the result data.
+" Default: 0
+let g:deoplete#sources#ternjs#docs = 1
+let g:deoplete#sources#ternjs#case_insensitive = 1
+
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue'
+		\ ]
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
+
+
+
+" Syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_ruby_checkers = ['rubocop']
+" let g:syntastic_ruby_rubocop_exec = '/Users/pistachio/.rbenv/shims/rubocop'
+
+

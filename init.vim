@@ -65,6 +65,10 @@ command WQ wq
 "enable mouse
 set mouse=a
 
+"
+set ignorecase
+set smartcase
+
 source ~/.config/nvim/theme.vim
 source ~/.config/nvim/plugin.vim
 source ~/.config/nvim/config.vim
