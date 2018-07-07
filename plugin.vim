@@ -68,8 +68,13 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
 Plug 'mhartington/deoplete-typescript'
 
-" Php
+" PHP
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+
+" Elixir
+Plug 'c-brenn/phoenix.vim'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
 
 " Test
 Plug 'janko-m/vim-test'

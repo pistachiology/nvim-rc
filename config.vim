@@ -19,13 +19,33 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --files --column --line-numbe
 map <C-\> :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<CR>  
 
-let NERDTreeIgnore = ['node_modules', '\.pyc$']
+let NERDTreeIgnore = ['node_modules', '\.pyc$', '_build']
 let g:NERDTreeMouseMode = 3     " Single Click
 
 " Ruby
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+" Elixir
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions (public)',
+        \ 'g:functions (private)',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:types',
+        \ 'z:foo'
+    \ ]
+    \ }
 
 " Testing
 nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
