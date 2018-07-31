@@ -6,6 +6,7 @@ Plug 'chakrit/vim-thai-keys'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rakr/vim-one'
+Plug 'mkitt/tabline.vim'
 
 Plug 'junegunn/vim-easy-align'
 
@@ -25,6 +26,7 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " Git
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 
 " Go
@@ -53,6 +55,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "
 
 Plug 'neoclide/vim-jsx-improve', { 'for': [ 'javascript', 'js', 'jsx' ]}
+Plug 'kchmck/vim-coffee-script'
 " Plug 'autozimu/LanguageClient-neovim', {
 "             \ 'branch': 'next',
 "             \ 'do': 'bash install.sh',

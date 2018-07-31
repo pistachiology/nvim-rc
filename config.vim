@@ -3,10 +3,15 @@
 set signcolumn=yes
 
 " default vim mapping
-nnoremap <C-[> gT
-nnoremap <C-]> gt
 nnoremap tn :tabnew<CR>
-unmap <esc>
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
 " set omnifunc=syntaxcomplete#Complete
 
 " fzf plugin
@@ -14,6 +19,13 @@ nnoremap <C-p> :Files<CR>
 nnoremap <leader>s :Tags<space><C-R><C-W><space><CR>
 nnoremap <leader>f :Ag<space><C-R><C-W><space><CR>
 command! -bang -nargs=* Find call fzf#vim#grep('rg --files --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
@@ -75,6 +87,7 @@ set termguicolors
 let g:ale_sign_column_always = 1
 let g:ale_linters = {'ruby': ['rubocop']}
 let g:ale_linter_aliases = {'jsx': 'css'}
+let g:ale_lint_on_text_changed = 'never'
 
 " Language Server
 let g:LanguageClient_serverCommands = {
