@@ -18,6 +18,8 @@ let mapleader = " "
 " set vim encoding
 set encoding=utf-8
 set fileencoding=utf-8
+set termencoding=utf-8
+lang en_US.utf-8
 
 filetype plugin on
 filetype indent on
