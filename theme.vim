@@ -14,9 +14,26 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+"
 
 
-set background=dark " for the light version
-let g:one_allow_italics = 1 " I love italic for comments
-colorscheme one
+let g:onedark_terminal_italics = 1
+colorscheme onedark
+" set background=dark " for the light version
+" let g:one_allow_italics = 1 " I love italic for comments
 
+
+" italic !!!
+hi jsxAttrib cterm=italic gui=italic
+hi Define cterm=italic gui=italic
+hi Keyword cterm=italic gui=italic
+
+" Ruby italic
+hi rubyClass cterm=italic gui=italic
+hi rubyFunction cterm=italic gui=italic
+hi rubySymbol cterm=italic gui=italic
+hi rubyConstant cterm=italic gui=italic
+hi rubyControl cterm=italic gui=italic
+hi rubyBlock cterm=italic gui=italic
+hi rubyInclude cterm=italic gui=italic
+hi rubyException cterm=italic gui=italic

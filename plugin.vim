@@ -5,8 +5,11 @@ Plug 'chakrit/vim-thai-keys'
 " Visual
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'rakr/vim-one'
+" Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'mkitt/tabline.vim'
+
+Plug 'sheerun/vim-polyglot'
 
 Plug 'junegunn/vim-easy-align'
 
@@ -38,6 +41,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/gem-ctags'
 Plug 'tpope/vim-bundler'
+Plug 'noprompt/vim-yardoc'
 
 
 " CSS & Preprocessors
