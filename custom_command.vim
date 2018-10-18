@@ -4,7 +4,7 @@ function! custom_command#run()
   if g:silent_custom_command
     execute 'silent !' . g:custom_command
   else
-    execute '!' . g:custom_command
+    execute g:custom_command
   end
 endfunction
 

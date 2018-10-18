@@ -17,6 +17,8 @@ set number
 
 colorscheme one
 
+set laststatus=0 " Hide airline
+
 let mapleader = " "
 
 " set vim encoding
@@ -29,6 +31,8 @@ filetype plugin on
 filetype indent on
 filetype plugin indent on
 
+set completeopt+=noselect
+
 
 " auto indent
 set autoindent
@@ -40,7 +44,7 @@ set scroll=16
 set backspace=indent,eol,start
 
 " set tab stops
-set shiftwidth=4 tabstop=8 softtabstop=4 expandtab
+set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 " COMMAND to use old-style tab
 command Tab setl shiftwidth=4 tabstop=4 softtabstop=0 noexpandtab indentexpr=
 
@@ -74,7 +78,20 @@ set mouse=a
 "
 set ignorecase
 set smartcase
+
+" relative line number
+" set number relativenumber
+"
+" augroup numbertoggle
+"   autocmd!
+"   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+" augroup END
+"
+
 source ~/.config/nvim/plugin.vim
 source ~/.config/nvim/theme.vim
+source ~/.config/nvim/priv.vim
 source ~/.config/nvim/config.vim
 source ~/.config/nvim/custom_command.vim
+

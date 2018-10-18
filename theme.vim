@@ -21,6 +21,8 @@ let g:onedark_terminal_italics = 1
 colorscheme onedark
 " set background=dark " for the light version
 " let g:one_allow_italics = 1 " I love italic for comments
+"
+let g:purple = "#c678dd"
 
 
 " italic !!!
@@ -28,6 +30,10 @@ hi jsxAttrib cterm=italic gui=italic
 hi Define cterm=italic gui=italic
 hi Keyword cterm=italic gui=italic
 hi Exception cterm=italic gui=italic
+hi Conditional cterm=italic gui=italic
+hi Statement cterm=italic gui=italic
+hi Label cterm=italic gui=italic
+hi Type cterm=italic gui=italic
 
 " Ruby italic
 hi rubyClass cterm=italic gui=italic
@@ -35,7 +41,7 @@ hi rubyFunction cterm=italic gui=italic
 hi rubySymbol cterm=italic gui=italic
 hi rubyConstant cterm=italic gui=italic
 hi rubyControl cterm=italic gui=italic
-hi rubyBlock cterm=italic gui=italic
+hi rubyBlock ctermfg=170 guifg=#c678dd cterm=italic, gui=italic
 hi rubyInclude cterm=italic gui=italic
 
 
@@ -44,3 +50,6 @@ hi rubyInclude cterm=italic gui=italic
 hi TabLineFill cterm=none ctermfg=grey  ctermbg=cyan
 hi TabLine     cterm=none ctermfg=white ctermbg=cyan
 hi TabLineSel  cterm=none ctermfg=black ctermbg=white
+
+" Golang
+hi goDeclaration cterm=italic gui=italic

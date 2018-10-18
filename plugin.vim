@@ -3,13 +3,17 @@ call plug#begin()
 Plug 'chakrit/vim-thai-keys'
 
 " Visual
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 " Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'mkitt/tabline.vim'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+" Plug 'mboughaba/vim-lessmess'
 
-Plug 'sheerun/vim-polyglot'
+
+" Plug 'sheerun/vim-polyglot'
 
 Plug 'junegunn/vim-easy-align'
 
@@ -23,17 +27,21 @@ Plug 'terryma/vim-multiple-cursors'
 " Autocomplete
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " Plug 'Valloric/YouCompleteMe'
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'ludovicchabant/vim-gutentags'
 
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'sebdah/vim-delve'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -42,6 +50,8 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/gem-ctags'
 Plug 'tpope/vim-bundler'
 Plug 'noprompt/vim-yardoc'
+
+Plug 'majutsushi/tagbar'
 
 
 " CSS & Preprocessors
@@ -60,6 +70,9 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 Plug 'neoclide/vim-jsx-improve', { 'for': [ 'javascript', 'js', 'jsx' ]}
 Plug 'kchmck/vim-coffee-script'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+Plug 'skywind3000/asyncrun.vim'
 " Plug 'autozimu/LanguageClient-neovim', {
 "             \ 'branch': 'next',
 "             \ 'do': 'bash install.sh',
@@ -89,11 +102,16 @@ Plug 'janko-m/vim-test'
 " Utilities
 Plug 'tomtom/tcomment_vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'rizzatti/dash.vim'
 
 " Syntax Checker
 " Plug 'vim-syntastic/syntastic'
 " Plug 'neomake/neomake'
 Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
+
+" Jenkins
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 " Initialize plugin system
 call plug#end()
