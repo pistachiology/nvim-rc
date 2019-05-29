@@ -10,6 +10,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'mkitt/tabline.vim'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
+Plug 'romainl/vim-qf'
 " Plug 'mboughaba/vim-lessmess'
 
 
@@ -89,7 +90,9 @@ Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
 Plug 'mhartington/deoplete-typescript'
 
 " PHP
-Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+" Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+
 
 " Elixir
 Plug 'c-brenn/phoenix.vim'
@@ -112,6 +115,9 @@ Plug 'SirVer/ultisnips'
 
 " Jenkins
 Plug 'martinda/Jenkinsfile-vim-syntax'
+
+" Sessions
+Plug 'tpope/vim-obsession'
 
 " Initialize plugin system
 call plug#end()

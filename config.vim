@@ -20,6 +20,7 @@ nnoremap <leader>0 10gt
 " quickfix
 nnoremap q] :cn<CR>
 nnoremap q[ :cp<CR>
+let g:qf_max_height = 5
 " set omnifunc=syntaxcomplete#Complete
 "
 
@@ -133,7 +134,11 @@ let g:LanguageClient_serverCommands = {
     \ 'css': ['vscode-css-languageserver-bin'],
     \ }
 
-autocmd filetype php LanguageClientStart
+" autocmd filetype php LanguageClientStart
+"
+" PHP
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
